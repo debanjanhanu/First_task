@@ -36,9 +36,6 @@ jobs:
     steps:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
+      run: ./addition.sh
       env:
-        run: |
-          echo ::set-env name={first_value}::{${{ github.event.inputs.first }}}
-          echo ::set-env name={second_value}::{${{ github.event.inputs.second }}}
-          echo ::set-env name={result}::{${{ $first_value + $second_value }}}
-          - run: echo $result
+        first_val:  ${{ github.event.inputs.first }}

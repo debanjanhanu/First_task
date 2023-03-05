@@ -35,15 +35,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Calculator
+    - name: Addition
       if: ${{ github.event.inputs.operator }}=='+'
       run: sh ./add.sh
+      
+    - name: Susbtraction
       if: ${{ github.event.inputs.operator }}=='-'
       run: sh ./substract.sh
+      
+    - name: Multiplication
       if: ${{ github.event.inputs.operator }}=='*'
       run: sh ./multiply.sh
+    
+    - name: Division
       if: ${{ github.event.inputs.operator }}=='/'
       run: sh ./division.sh
+      
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}

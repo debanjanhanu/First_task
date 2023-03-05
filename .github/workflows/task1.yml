@@ -41,4 +41,4 @@ jobs:
           echo ::set-env name={first_value}::{${{ github.event.inputs.first }}}
           echo ::set-env name={second_value}::{${{ github.event.inputs.second }}}
           echo ::set-env name={result}::{${{ $first_value + $second_value }}}
-        - run: echo $result
+          - run: echo $result

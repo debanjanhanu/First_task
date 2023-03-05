@@ -37,9 +37,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
-      run: |
-        echo "Addition result is"
-        -run: sh ./add.sh
+      run: sh ./add.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}

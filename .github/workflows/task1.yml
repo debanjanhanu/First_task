@@ -19,12 +19,23 @@ on:
         - '-'
         - '*'
         - '/'
-    
+
+#jobs:
+  #calculator:
+    #runs-on: ubuntu-latest
+
+    #steps:
+    #- name: Calculator
+     # run: echo "${{ github.event.inputs.first }}"
+
+        
 jobs:
   calculator:
     runs-on: ubuntu-latest
 
     steps:
     - name: Calculator
-      run: echo "${{ github.event.inputs.first }}"
-        
+      if: ${{ github.event.inputs.operator }}=='+'
+      env: 
+        result: ${{ ${{ github.event.inputs.first }} + ${{ github.event.inputs.second }}}}
+      run: echo $result

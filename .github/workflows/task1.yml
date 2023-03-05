@@ -31,7 +31,7 @@ on:
         
 jobs:
 
-  output1:
+  Addition:
     if: ${{ github.event.inputs.operator }}=='+'
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +42,7 @@ jobs:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
 
-  output2:
+  Substraction:
     if: ${{ github.event.inputs.operator }}=='-'
     runs-on: ubuntu-latest
     steps:
@@ -53,7 +53,7 @@ jobs:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
   
-  output3:
+  Multiplication:
     if: ${{ github.event.inputs.operator }}=='*'
     runs-on: ubuntu-latest
     steps:
@@ -64,7 +64,7 @@ jobs:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
 
-  output4:
+  Division:
     if: ${{ github.event.inputs.operator }}=='/'
     runs-on: ubuntu-latest
     steps:

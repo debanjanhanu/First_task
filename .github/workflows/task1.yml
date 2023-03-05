@@ -12,7 +12,7 @@ on:
         description: Enter second number
 
       operator:
-        type: choose
+        type: choice
         description: Enter the operator
         options:
         - ADD

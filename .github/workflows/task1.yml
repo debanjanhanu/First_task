@@ -36,6 +36,6 @@ jobs:
     steps:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
-      run: ./addition.sh
+      run: sh ./addition.sh
       env:
         first_val:  ${{ github.event.inputs.first }}

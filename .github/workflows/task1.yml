@@ -38,22 +38,30 @@ jobs:
     - name: Addition
       if: ${{ github.event.inputs.operator }}=='+'
       run: sh ./add.sh
+      env:
+        first_val:  ${{ github.event.inputs.first }}
+        second_val: ${{ github.event.inputs.second }}
       
     - uses: actions/checkout@v2
     - name: Susbtraction
       if: ${{ github.event.inputs.operator }}=='-'
       run: sh ./substract.sh
+      env:
+        first_val:  ${{ github.event.inputs.first }}
+        second_val: ${{ github.event.inputs.second }}
       
     - uses: actions/checkout@v2
     - name: Multiplication
       if: ${{ github.event.inputs.operator }}=='*'
       run: sh ./multiplication.sh
+      env:
+        first_val:  ${{ github.event.inputs.first }}
+        second_val: ${{ github.event.inputs.second }}
     
     - uses: actions/checkout@v2
     - name: Division
       if: ${{ github.event.inputs.operator }}=='/'
       run: sh ./division.sh
-      
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}

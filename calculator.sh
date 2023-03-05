@@ -7,6 +7,6 @@ elif [$operator_val=='*']; then
 else
   res=$(expr $first_val / $second_val)
 fi
-echo $Result is
+echo "Result is"
 echo $res
 

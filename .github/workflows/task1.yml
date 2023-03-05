@@ -38,4 +38,4 @@ jobs:
       if: ${{ github.event.inputs.operator }}=='+'
       env: 
         result: 3
-      run: echo result
+      run: echo $result

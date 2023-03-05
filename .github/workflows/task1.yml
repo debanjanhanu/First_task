@@ -36,6 +36,6 @@ jobs:
     steps:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
-      env: 
-        result: ${{ 2 + 3}}
-      run: echo $result
+      #env: 
+        #result: ${{ 2 + 3}}
+      run: echo "Done"

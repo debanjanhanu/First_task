@@ -30,7 +30,7 @@ on:
 
         
 jobs:
-  calculator:
+  outputs:
     runs-on: ubuntu-latest
 
     steps:
@@ -41,7 +41,7 @@ jobs:
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
-      
+
     - uses: actions/checkout@v2
     - name: Susbtraction
       if: ${{ github.event.inputs.operator }}=='-'
@@ -57,11 +57,11 @@ jobs:
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
-    
+
     - uses: actions/checkout@v2
     - name: Division
       if: ${{ github.event.inputs.operator }}=='/'
       run: sh ./division.sh
-      env:
-        first_val:  ${{ github.event.inputs.first }}
-        second_val: ${{ github.event.inputs.second }}
+    env:
+      first_val:  ${{ github.event.inputs.first }}
+      second_val: ${{ github.event.inputs.second }}

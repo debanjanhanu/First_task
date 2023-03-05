@@ -39,5 +39,5 @@ jobs:
       env: 
         result: $ {{ github.event.inputs.first }}
       run: |
-        echo ::set-env name=res::$(($result + 50))
+        echo ::set-env name=res::$((20 + 50))
         - run: echo $res

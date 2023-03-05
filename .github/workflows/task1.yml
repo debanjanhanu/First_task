@@ -40,3 +40,4 @@ jobs:
       run: sh ./add.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
+        second_val: ${{ github.event.inputs.second }}

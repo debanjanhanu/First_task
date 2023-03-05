@@ -30,37 +30,46 @@ on:
 
         
 jobs:
-  outputs:
-    runs-on: ubuntu-latest
 
+  output1:
+    if: ${{ github.event.inputs.operator }}=='+'
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Addition
-      if: ${{ github.event.inputs.operator }}=='+'
+    - name: Addition  
       run: sh ./add.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
 
+  output2:
+    if: ${{ github.event.inputs.operator }}=='-'
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Susbtraction
-      if: ${{ github.event.inputs.operator }}=='-'
       run: sh ./substract.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
-      
+  
+  output3:
+    if: ${{ github.event.inputs.operator }}=='*'
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Multiplication
-      if: ${{ github.event.inputs.operator }}=='*'
       run: sh ./multiplication.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}
 
+  output4:
+    if: ${{ github.event.inputs.operator }}=='/'
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Division
-      if: ${{ github.event.inputs.operator }}=='/'
       run: sh ./division.sh
     env:
       first_val:  ${{ github.event.inputs.first }}

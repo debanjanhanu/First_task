@@ -1,7 +1,7 @@
 name: calculator_task
 
 on:
-  workflow-dispatch: 
+  workflow_dispatch: 
     inputs:
       first:
         type: string

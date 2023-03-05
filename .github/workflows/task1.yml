@@ -45,7 +45,7 @@ jobs:
       
     - name: Multiplication
       if: ${{ github.event.inputs.operator }}=='*'
-      run: sh ./multiply.sh
+      run: sh ./multiplication.sh
     
     - name: Division
       if: ${{ github.event.inputs.operator }}=='/'

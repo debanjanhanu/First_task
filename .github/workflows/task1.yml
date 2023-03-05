@@ -36,10 +36,9 @@ jobs:
     steps:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
-      env: 
-        result: $ {{ github.event.inputs.operator }}
-      run:
-        echo $result
-      #run: |
-       # echo ::set-env name=res::$((20 + 50))
-        #- run: echo $res
+      env:
+        run: |
+          echo ::set-env name={first_value}::{${{ github.event.inputs.first }}}
+          echo ::set-env name={second_value}::{${{ github.event.inputs.second }}}
+          echo ::set-env name={result}::{${{ $first_value + $second_value }}}
+        - run: echo $result

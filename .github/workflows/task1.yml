@@ -37,7 +37,7 @@ jobs:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
       env: 
-        result: 0
+        result: $ {{ github.event.inputs.first }}
       run: |
-        echo ::set-env name=res::$(($ {{ github.event.inputs.first }} + ${{ github.event.inputs.second }}))
+        echo ::set-env name=res::$((result + ${{ github.event.inputs.second }}))
         - run: echo $res

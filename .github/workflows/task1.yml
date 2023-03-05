@@ -37,7 +37,7 @@ jobs:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
       env: 
-        result: $ (( {{ github.event.inputs.first }} + 50))
+        result: $ {{ github.event.inputs.operator }}
       run:
         echo $result
       #run: |

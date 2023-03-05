@@ -34,6 +34,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v2
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
       run: sh ./add.sh

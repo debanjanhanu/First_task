@@ -1,27 +1,31 @@
-
-name: Mixed inputs
+name: calculator_task
 
 on:
-  workflow_dispatch:
+  workflow-dispatch: 
     inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include  emojis
-      environment:
-        type: environment
+      first:
+        type: string
+        description: Enter first number
 
+      second:
+        type: string
+        description: Enter second number
+
+      operator:
+        type: choose
+        description: Enter the operator
+        options:
+        - +
+        - -
+        - *
+        - /
+    
 jobs:
-  greet:
+  calculator:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send greeting
-      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", ""]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+    - name: Calculator
+      run: echo "${{ github.event.inputs.first }} ${{ github.event.inputs.second }} ${{ github.event.inputs.operator }}"
+
+        

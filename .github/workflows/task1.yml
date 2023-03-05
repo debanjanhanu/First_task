@@ -38,6 +38,12 @@ jobs:
     - name: Calculator
       if: ${{ github.event.inputs.operator }}=='+'
       run: sh ./add.sh
+      if: ${{ github.event.inputs.operator }}=='-'
+      run: sh ./substract.sh
+      if: ${{ github.event.inputs.operator }}=='*'
+      run: sh ./multiply.sh
+      if: ${{ github.event.inputs.operator }}=='/'
+      run: sh ./division.sh
       env:
         first_val:  ${{ github.event.inputs.first }}
         second_val: ${{ github.event.inputs.second }}

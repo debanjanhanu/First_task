@@ -26,5 +26,5 @@ jobs:
 
     steps:
     - name: Calculator
-      run: echo "${{ github.event.inputs.first }}${{ fromJSON('["", ""]')
+      run: echo "${{ github.event.inputs.first }}"
         

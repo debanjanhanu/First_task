@@ -30,7 +30,16 @@ on:
 
         
 jobs:
-
+  inputs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: First Input
+      run: echo "First input is ${{guthub.event.inputs.first}}"
+    - name: Second Input
+      run: echo "Second input is ${{guthub.event.inputs.first}}"
+    - name: Operator Input
+      run: echo "First input is ${{guthub.event.inputs.first}}"
   output:
     runs-on: ubuntu-latest
     steps:

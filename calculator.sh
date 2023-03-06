@@ -5,8 +5,11 @@ elif [ "$operator_val" = "-" ]; then
   res=$(expr $first_val - $second_val)
   echo "Substraction result is $res"
 elif [ "$operator_val" = "*" ]; then
-  #res=$(expr $first_val * $second_val)
-  res = $($4 * $3)
+  for i in {1..$second_val}
+  do
+    res = $res + $first_val
+  res=$(expr $first_val * $second_val)
+  #res = $($4 * $3)
   echo "Multiplication result is $res"
 elif [ "$operator_val" = "/" ]; then
   res=$(expr $first_val / $second_val)

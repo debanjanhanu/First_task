@@ -35,11 +35,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: First Input
-      run: echo "First input is ${{guthub.event.inputs.first}}"
+      run: echo "First input is ${{github.event.inputs.first}}"
     - name: Second Input
-      run: echo "Second input is ${{guthub.event.inputs.first}}"
+      run: echo "Second input is ${{github.event.inputs.first}}"
     - name: Operator Input
-      run: echo "First input is ${{guthub.event.inputs.first}}"
+      run: echo "First input is ${{github.event.inputs.first}}"
   output:
     runs-on: ubuntu-latest
     steps:

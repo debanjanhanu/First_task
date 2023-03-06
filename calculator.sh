@@ -1,15 +1,15 @@
 if [ "$operator_val" = "+" ]; then
   res=$(expr $first_val + $second_val)
-  echo -e "Addition result is $res"
+  echo "Addition result is $res"
 elif [ "$operator_val" = "-" ]; then
   res=$(expr $first_val - $second_val)
-  echo $res
+  echo "Substraction result is $res"
 elif [ "$operator_val" = "*" ]; then
   res=$(expr $first_val * $second_val)
-  echo $res
+  echo "Multiplication result is $res"
 elif [ "$operator_val" = "/" ]; then
   res=$(expr $first_val * $second_val)
-  echo $res
+  echo "Division result is $res"
 else
   echo "Wrong"
 fi

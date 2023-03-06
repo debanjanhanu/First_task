@@ -5,7 +5,7 @@ elif [ "$operator_val" = "-" ]; then
   res=$(expr $first_val - $second_val)
   echo "Substraction result is $res"
 elif [ "$operator_val" = "*" ]; then
-  resu = $(expr $first_val * $second_val)
+  resu = $(expr $first_val \* $second_val)
   echo "Multiplication result is $resu"
 elif [ "$operator_val" = "/" ]; then
   res=$(expr $first_val / $second_val)

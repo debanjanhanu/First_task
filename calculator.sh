@@ -9,6 +9,7 @@ elif [ "$operator_val" = "*" ]; then
   do
     res = $res + $first_val
   res=$(expr $first_val * $second_val)
+  done
   #res = $($4 * $3)
   echo "Multiplication result is $res"
 elif [ "$operator_val" = "/" ]; then

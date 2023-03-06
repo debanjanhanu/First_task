@@ -1,6 +1,6 @@
 if [ "$operator_val" = "+" ]; then
   res=$(expr $first_val + $second_val)
-  echo $res
+  echo -e "Addition result is" ; echo $res
 elif [ "$operator_val" = "-" ]; then
   res=$(expr $first_val - $second_val)
   echo $res
